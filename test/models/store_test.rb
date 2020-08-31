@@ -9,4 +9,14 @@ class StoreTest < ActiveSupport::TestCase
    @store.name = ""
    assert_not @store.valid?
  end
+
+ test "name should not be too small" do
+    @store.name = "a" * 4
+    assert_not @store.valid?
+  end
+  
+  test "name should not be too long" do
+    @store.name = "a" * 51
+    assert_not @store.valid?
+  end
 end
