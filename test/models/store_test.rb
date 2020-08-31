@@ -2,7 +2,8 @@ require 'test_helper'
 
 class StoreTest < ActiveSupport::TestCase
   def setup
-    @store = Store.create!(name: "chaduvla")
+    @store = Store.new(name: "chaduvla")
+    @store.save
   end
 
  test "name should not be empty" do
