@@ -20,9 +20,4 @@ class ItemTest < ActiveSupport::TestCase
   assert_not @item.valid?
   end
 
-  test "cost should be integer" do 
-  @item.cost = 45
-  assert @item.valid?
-  end
-
 end
