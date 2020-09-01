@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_134151) do
+ActiveRecord::Schema.define(version: 2020_09_01_143613) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.integer "store_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "total", precision: 10, scale: 2
+    t.decimal "paid", precision: 10, scale: 2
+    t.decimal "balance", precision: 10, scale: 2
     t.index ["store_id"], name: "index_customers_on_store_id"
   end
 
